@@ -1,10 +1,12 @@
 import { initDatabase } from "./db/init.js";
 import { Post } from "./db/models/post.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 async function main() {
   await initDatabase(); // wait for the database to initialize
   const post = new Post({
-    title: "Alice Liu",
+    title: "Hello from Alice Liu",
     author: "Alice Liu",
     content: "This is a sample post content.",
     tags: ["sample", "post", "alice"],
