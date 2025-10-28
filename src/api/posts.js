@@ -15,3 +15,15 @@ export const getPosts = async (queryParams) => {
   console.log("Response data length:", data.length);
   return data;
 };
+export const createPost = async (post) => {
+  const res = await fetch(
+    `${import.meta.env.VITE_BACKEND_URL}/
+posts`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(post),
+    },
+  );
+  return await res.json();
+};
