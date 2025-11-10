@@ -1,9 +1,10 @@
 export const signup = async ({ username, password }) => {
-  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users/signup`, {
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password }),
   });
+  if (!res.ok) throw new Error("failed to sign up");
   return await res.json();
 };
 export const login = async ({ username, password }) => {
@@ -21,5 +22,6 @@ export const getUserInfo = async (id) => {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
+  if (!res.ok) throw new Error("failed to get user info");
   return await res.json();
 };
