@@ -1,9 +1,10 @@
-import { PostList } from "./components/PostList.jsx";
-import { CreatePost } from "./components/CreatePost.jsx";
-import { PostFilter } from "./components/PostFilter.jsx";
-import { PostSorting } from "./components/PostSorting.jsx";
+import { PostList } from "../components/PostList.jsx";
+import { CreatePost } from "../components/CreatePost.jsx";
+import { PostFilter } from "../components/PostFilter.jsx";
+import { PostSorting } from "../components/PostSorting.jsx";
+import { Header } from "../components/Header.jsx";
 import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "./api/posts.js";
+import { getPosts } from "../api/posts.js";
 import { useState } from "react";
 
 export function Blog() {
@@ -17,6 +18,10 @@ export function Blog() {
   const posts = postsQuery.data ?? [];
   return (
     <div style={{ padding: 8 }}>
+      <Header />
+      <br />
+      <hr />
+      <br />
       <h1>Welcome to my blog</h1>
       <CreatePost />
       <br />
