@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.5",
+    "jwt-decode": "^4.0.0",
     "mongodb": "^6.3.0",
     "mongosh": "^2.5.9",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^6.21.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
