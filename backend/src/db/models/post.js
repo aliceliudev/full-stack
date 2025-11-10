@@ -3,7 +3,7 @@ const postSchema = new Schema(
   {
     title: { type: String, required: true },
     content: { type: String },
-    author: { type: String },
+    author: { type: Schema.Types.ObjectId, ref: "user", required: true },
     tags: [{ type: String }],
   },
   { timestamps: true },
