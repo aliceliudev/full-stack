@@ -22,7 +22,6 @@ export function Blog() {
       <br />
       <hr />
       <br />
-      <h1>Welcome to my blog</h1>
       <CreatePost />
       <br />
       <hr />
