@@ -2,14 +2,14 @@
   "folders": [
     {
       "name": "Frontend",
-      "path": "."
+      "path": ".",
     },
     {
       "name": "Backend",
-      "path": "./backend"
-    }
+      "path": "./backend",
+    },
   ],
   "settings": {
-    "jest.rootPath": "backend"
-  }
+    "jest.rootPath": "backend",
+  },
 }

@@ -1,26 +1,15 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthContextProvider } from "./contexts/AuthContext.jsx";
+import { HelmetProvider } from "react-helmet-async";
 import PropTypes from "prop-types";
-import { useState } from "react";
-
+const queryClient = new QueryClient();
 export function App({ children }) {
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 60 * 1000, // 1 minute
-          },
-        },
-      }),
-  );
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthContextProvider>{children}</AuthContextProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthContextProvider>{children}</AuthContextProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
-App.propTypes = {
-  children: PropTypes.element.isRequired,
-};
+App.propTypes = { children: PropTypes.element.isRequired };

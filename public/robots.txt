@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://https://bug-free-cod-r5qx65pvwxfwq7-5173.app.github.dev/sitemap.xml
