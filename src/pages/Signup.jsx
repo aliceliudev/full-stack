@@ -11,6 +11,16 @@ export function Signup() {
     onSuccess: () => navigate("/login"),
     onError: () => alert("failed to sign up!"),
   });
+
+  // Debug logging
+  console.log("Username:", username, "Length:", username.length);
+  console.log("Password:", password, "Length:", password.length);
+  console.log("Is Pending:", signupMutation.isPending);
+  console.log(
+    "Button disabled:",
+    !username || !password || signupMutation.isPending,
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signupMutation.mutate();
