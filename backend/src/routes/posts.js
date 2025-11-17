@@ -31,7 +31,7 @@ export function postsRoutes(app) {
     }
   });
 
-  app.get("/api/v1/posts/:id", requireAuth, async (req, res) => {
+  app.get("/api/v1/posts/:id", async (req, res) => {
     const { id } = req.params;
     try {
       const post = await getPostById(id);
