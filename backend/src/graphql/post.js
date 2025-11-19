@@ -1,0 +1,22 @@
+import { getUserInfoById } from "../services/users.js";
+export const postSchema = `#graphql
+type Post {
+id: ID!
+title: String!
+author: User
+content: String
+tags: [String!]
+createdAt: Float
+updatedAt: Float
+}
+`;
+export const postResolver = {
+  Post: {
+    id: (post) => {
+      return post._id?.toString() || post.id;
+    },
+    author: async (post) => {
+      return await getUserInfoById(post.author);
+    },
+  },
+};

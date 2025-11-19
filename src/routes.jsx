@@ -52,7 +52,7 @@ export const routes = [
     element: <Login />,
   },
   {
-    path: "/posts/:postId",
+    path: "/posts/:postId/*",
     loader: async ({ params }) => {
       const postId = params.postId;
       const queryClient = new QueryClient();
@@ -77,5 +77,13 @@ export const routes = [
         </HydrationBoundary>
       );
     },
+  },
+  {
+    path: "*",
+    element: (
+      <div style={{ padding: "20px" }}>
+        <h1>404 - Page Not Found</h1>
+      </div>
+    ),
   },
 ];

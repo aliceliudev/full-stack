@@ -1,0 +1,4 @@
+{
+ "schema": "https://bug-free-cod-r5qx65pvwxfwq7-3120.app.github.dev/graphql",
+ "documents": "src/api/graphql/**/*.{js,jsx}"
+}
