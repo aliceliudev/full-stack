@@ -4,7 +4,9 @@
     "__ENV__": "test"
   },
   "transform": {},
+  "transformIgnorePatterns": ["node_modules/(?!.*/esm)"],
   "globalSetup": "<rootDir>/src/test/globalSetup.js",
   "globalTeardown": "<rootDir>/src/test/globalTeardown.js",
-  "setupFilesAfterEnv": ["<rootDir>/src/test/setupFileAfterEnv.js"]
+  "setupFilesAfterEnv": ["<rootDir>/src/test/setupFileAfterEnv.js"],
+  "maxWorkers": 1
 }

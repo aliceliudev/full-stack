@@ -11,10 +11,10 @@ export async function createUser({ username, password }) {
 export async function getUserInfoById(userId) {
   try {
     const user = await User.findById(userId);
-    if (!user) return { username: userId };
-    return { username: user.username };
+    if (!user) return { id: userId, username: userId };
+    return { id: user._id.toString(), username: user.username };
   } catch (err) {
-    return { username: userId };
+    return { id: userId, username: userId };
   }
 }
 
